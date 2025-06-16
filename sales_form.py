@@ -89,7 +89,7 @@ class SalesForm(QWidget):
         cur.execute("""
             INSERT INTO sales
             (product_id, customer_name, quantity, unit, rate_per_unit, total_rate, tax)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
         """, (product_id, customer, quantity, unit, rate_per_unit, total_rate, tax))
         conn.commit()
         conn.close()
